@@ -37,7 +37,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:8000", "https://your-app.onrender.com"],
+    allow_origins=["http://localhost:3000", "http://localhost:8000", "https://soaisec.onrender.com/"],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
