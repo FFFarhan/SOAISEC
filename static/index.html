@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Q&A Service</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Secure Q&A Service</h1>
+        </header>
+
+        <main>
+            <!-- Chat Section -->
+            <section class="chat-section">
+                <h2>Chat</h2>
+                <div id="messages" class="messages"></div>
+                
+                <div class="input-form">
+                    <input 
+                        type="text" 
+                        id="message-input" 
+                        placeholder="Enter your question..." 
+                        maxlength="1000"
+                    />
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Audit Section -->
+            <section class="audit-section">
+                <h2>Audit Log</h2>
+                <div id="audit-log" class="audit-log">
+                    <p>No requests yet</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

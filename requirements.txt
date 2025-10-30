@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+httpx
+slowapi
+python-dotenv
+google-genai
+structlog
+pytest
+uvicorn[standard]
