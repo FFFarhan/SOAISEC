@@ -70,3 +70,22 @@ curl -H "X-API-Key: dev-key-12345" http://localhost:8000/api/logs
 	- `GEMINI_API_KEY` 
 	- `API_KEYS` 
 
+### Docker
+- The `Dockerfile` provided can be used to set up and run this app as a Docker Container
+- Build using :
+```cmd
+docker build -t secure-qa .
+```
+- Run using :
+```cmd
+docker run --env-file .env -p 8000:8000 secure-qa
+```
+(pre-made .env file needed)
+
+### Tests
+- Run pre-written tests from `tests/test_gaurdrails.py`
+```cmd
+pytest -v test_guardrails.py
+```
+
+

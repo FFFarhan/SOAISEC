@@ -1,6 +1,6 @@
 # Security policy, assumptions, key handling and guardrails
 
-This file records the security policies, assumptions, and the concrete key/secret handling practices and runtime guardrails used by the SOAISEC FastAPI service (`answer.py`). Use this as an operational reference and update it when controls change.
+This file records the security policies, assumptions, and the concrete key/secret handling practices and runtime guardrails used by the SOAISEC FastAPI service (`answer.py`).
 
 ## Policies
 - No secrets in source: never commit API keys, tokens, or credentials. 
@@ -20,10 +20,10 @@ This file records the security policies, assumptions, and the concrete key/secre
 3. Do not persist secrets to disk; avoid writing credentials to local files.
 4. Rotate secrets quickly and automate rotation where possible.
 5. Redact secrets in logs: configure loggers to filter `api_key`, `password`, `token`, etc.
-6. Run secret scanning in CI and use pre-commit hooks to detect common patterns before commit.
+
 
 ## Guardrails implemented in this project
-These are the concrete runtime protections implemented in `answer.py` and supporting code.
+These are the runtime protections implemented in `answer.py` and supporting code.
 
 - Input validation and prompt-injection detection
 	- Function: `detect_prompt_injection(text)` checks inputs against regex patterns to block obvious injection attempts (e.g., "ignore previous instructions", "jailbreak", "developer mode").
