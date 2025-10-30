@@ -36,3 +36,42 @@ pip-wheel-metadata/
 
 # System files
 Thumbs.db
+
+# .gitignore for SOAISEC
+# Keep logs (e.g. app.log) in repo per user's request — do NOT ignore *.log
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+
+# Test and build artifacts
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+.mypy_cache/
+
+# Packaging
+pip-wheel-metadata/
+
+# Local env files (do not commit secrets)
+.env
+.env.local
+
+# Database files
+*.sqlite3
+
+# System files
+Thumbs.db
