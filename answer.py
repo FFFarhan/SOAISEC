@@ -23,7 +23,13 @@ logger = logging.getLogger(__name__)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 API_KEYS = set(os.getenv("API_KEYS").split(","))
 
-limiter = Limiter(key_func=get_remote_address)
+def get_real_ip(request: Request):
+    forwarded = request.headers.get("X-Forwarded-For")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host
+
+limiter = Limiter(key_func=get_real_ip)
 
 app = FastAPI()
 app.state.limiter = limiter
